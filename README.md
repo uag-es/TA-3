@@ -17,3 +17,9 @@ Execucao dos testes:
 
 O codigo desse sistema foi gentilmente cedido pelo Professor Paulo Borba (CIn/UFPE). O codigo original pode ser acessado nesse link:
 https://github.com/pauloborba/TA
+
+-------------------------------------------------------------------------------------------------------------------
+
+Desenvolvedores em 2016.2:
+
+1. 
