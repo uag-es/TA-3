@@ -1,0 +1,4 @@
+
+--Output from Register a criterion that does not exist--
+--Output from Register a criterion that already exists--
+--Output from Error when registering a criterion that already exists--
