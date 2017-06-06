@@ -1,5 +1,5 @@
-#Esta feature é a feature inicial, idealizada antes da iteração de imlementar features.
-#Portanto, será descartada dos testes finais visto que não faz uso de métodos de controlador que não sejam
+#Esta feature eh a feature inicial, idealizada antes da iteracao de imlementar features.
+#Portanto, sera descartada dos testes finais visto que nao faz uso de metodos de controlador que nao sejam
 #Gerados automaticamente.
 
 #Arthur Lapprand

@@ -49,13 +49,13 @@ class EvaluationDataAndOperations{
         def controller = new StudentController();
         String students;
         switch(i) {
-            case 2: students = "João Adherval (jacb :: joaoadherval); Milena Cabral (mscc :: Milechwan); Danilo Ribeiro (dlr4 :: DLRibeiro); Arthur Lapprand (abl3 :: ArthurLapprand); Rodrigo Calegario (rcac :: rcalegario); Thiago Bastos (tmb2 :: TMotaBastos)"
+            case 2: students = "Joao Adherval (jacb :: joaoadherval); Milena Cabral (mscc :: Milechwan); Danilo Ribeiro (dlr4 :: DLRibeiro); Arthur Lapprand (abl3 :: ArthurLapprand); Rodrigo Calegario (rcac :: rcalegario); Thiago Bastos (tmb2 :: TMotaBastos)"
                 break;
-            case 1: students = "Edymir Semedo (eebls :: edymiretienne); Thiago da Fonte Bastos (tfb :: ThiagoPrime); Emanuel(efis :: silvaemanuel); Thiago(tas4 :: ThiagoAquino); José Murilo(jmsmf :: zehmurilo)"
+            case 1: students = "Edymir Semedo (eebls :: edymiretienne); Thiago da Fonte Bastos (tfb :: ThiagoPrime); Emanuel(efis :: silvaemanuel); Thiago(tas4 :: ThiagoAquino); Jose Murilo(jmsmf :: zehmurilo)"
                 break;
-            case 3: students = "Felipe Henrique de Almeida Bormann (fhab :: fbormann); Arthur Jorge Ebrahim Wanderley (anew :: ajew); Milton Vasconcelos da Gama Neto ( mvgn :: miltongneto); Otávio Vera Cruz Gomes ( ovcg :: ovcg); Allyson Manoel Nascimento Venceslau (amnv :: amnv); Wilquer Torres Lima (wtl :: wilquerlima)"
+            case 3: students = "Felipe Henrique de Almeida Bormann (fhab :: fbormann); Arthur Jorge Ebrahim Wanderley (anew :: ajew); Milton Vasconcelos da Gama Neto ( mvgn :: miltongneto); Otavio Vera Cruz Gomes ( ovcg :: ovcg); Allyson Manoel Nascimento Venceslau (amnv :: amnv); Wilquer Torres Lima (wtl :: wilquerlima)"
                 break
-            case 5: students = "Luiz Felipe Véras Gonçalves (lfvg :: lfvg); Walber Rodrigues de Oliveria (wro :: WalberRodri); Augusto César Aragão de Bulhões (acab2 :: acab2); Jadson Torres de Lucena (jtl :: --); Matheus Hermínio de Carvalho(mhc :: Derzet)"
+            case 5: students = "Luiz Felipe Varas Goncalves (lfvg :: lfvg); Walber Rodrigues de Oliveria (wro :: WalberRodri); Augusto Cesar Aragao de Bulhoes (acab2 :: acab2); Jadson Torres de Lucena (jtl :: --); Matheus Hermanio de Carvalho(mhc :: Derzet)"
         }
         controller.params <<[name: students];
         controller.saveGroup();
