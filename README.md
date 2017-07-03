@@ -20,8 +20,6 @@ https://github.com/pauloborba/TA
 
 -------------------------------------------------------------------------------------------------------------------
 
-Desenvolvedores em 2016.2:
+Desenvolvedores em 2017.1:
 
-1. Jose Neilton de Barros Melo
-2. Danillo Bion
-3. Edilberto Braz
+1. Naira Lucia Raimundo Torres
