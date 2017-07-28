@@ -55,14 +55,15 @@ Given(~/^I am in the Report page$/) { ->
     at IndexReport
 }
 And(~/^I try to create the report named "([^"]*)", type "([^"]*)", value "([^"]*)", evaluation "([^"]*)"$/) { String arg1, String arg2, double arg3, String arg4 ->
-    nomeReport = arg1
+   
+	nomeReport = arg1
     tipoReport = arg2
     valorReport = arg3
     avaliacaoReport = arg4
 
     to CreateReportsPage
     at CreateReportsPage
-    page.fillReportDetails(arg1,arg2,arg4,arg3)
+    page.fillReportDetails(nomeReport, tipoReport, valorReport, avaliacaoReport)
     page.createReport()
     to IndexReport
 }
@@ -70,10 +71,10 @@ When(~/^I select the "([^"]*)" report$/) { String arg1 ->
     at IndexReport
     page.selectReport(arg1)
 }
-Then(~/^I should see the details related to the "([^"]*)" report$/) { String arg1 ->
+Then(~/^I should see the details related to the "([^"]*)" report$/) { String nome ->
     at ShowReportsPage
-//    assert page.checkName(nomeReport)
-//    assert page.checkType(tipoReport)
-//    assert page.checkAvaliacao(avaliacaoReport)
+    assert page.checkName(nome)
+	assert page.checkType(tipoReport)
+	assert page.checkAvaliacao(avaliacaoReport)
 }
 //end GUI scenario

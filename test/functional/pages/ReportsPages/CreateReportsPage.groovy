@@ -10,11 +10,11 @@ class CreateReportsPage extends Page {
         title ==~/Create Report/
     }
 
-    def fillReportDetails(String name, String type, String eval, double value){
+    def fillReportDetails(String name, String tipo, double valor, String avaliacao){
         $("form").name = name
-        chooseType(type)
-        chooseEval(eval)
-        $("form").valor = value
+        chooseType(tipo)
+        chooseEval(avaliacao)
+        $("form").valor = valor
     }
 
     def chooseType(String type){
