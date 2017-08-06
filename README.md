@@ -26,5 +26,5 @@ Desenvolvedores em 2016.2:
 2. Danillo Bion
 3. Edilberto Braz
 
-
-1. 
+Desenvolvedores em 2017.1:
+1. Naira Lucia Raimundo Torres

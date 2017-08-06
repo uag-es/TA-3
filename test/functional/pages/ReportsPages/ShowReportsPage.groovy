@@ -8,20 +8,19 @@ import geb.Page
 class ShowReportsPage extends Page {
     static url = "/TA/report/show"
     static at = {
-        title ==~/Report List/
+        title ==~/Show Report/
     }
+	def boolean checkName(String name) {
+		if ($("tbody").has("a", name: name)) return false
+		return true
+	}
+	def boolean checkType(String tipo) {
+		if ($("tbody").has("a", name: tipo)) return false
+		return true
+	}
 
-    def boolean checkName(String name){
-        def s = $("span", id: "n").text()
-        return $("span", id: "n").text().equals(name)
-    }
-    def boolean checkType(String type){
-        def s = $("span", id: "t").text()
-        return $("span", id: "t").text().equals(type)
-    }
-    def boolean checkAvaliacao(String avaliacao){
-        def s = $("span", id: "a").text()
-        return $("span", id: "a").text().equals(avaliacao)
-    }
-
+	def boolean checkAvaliacao(String avaliacao) {
+		if ($("tbody").has("a", name: avaliacao)) return false
+		return true
+	}
 }

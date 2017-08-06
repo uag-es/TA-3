@@ -9,8 +9,20 @@ class IndexReport extends Page {
     static at={
         title ==~/Report List/
     }
+	
+	boolean confirmReport(String name, String tipo, double valor, String avaliacao) {
+		boolean r = false
+		boolean findName = $("tr").find("td").has("a",text: name)
+		boolean findTipo = $ ("tr").has("td",text: tipo)
+		boolean findAvaliacao = $ ("tr").has("td",text: avaliacao)
+		if(findName && findTipo && valor >= 0.0 && findAvaliacao){
+			r = true
+		}
+		return r
+	}
 
     def selectReport(String name){
         $("td").find("a", name: name).click()
     }
+	
 }
