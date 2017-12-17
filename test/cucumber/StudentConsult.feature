@@ -1,9 +1,16 @@
 ##João Adherval
-#Feature: Search and Consult a student
-#  As a teacher
-#  I want to search a student and consult that student's information
-#  So I can see the student's performance and evaluations
-#
+Feature: Search and Consult a student
+  As a teacher
+  I want to search a student and consult that student's information
+  So I can see the student's performance and evaluations
+
+#Controller Scenario - Gabrielle Amorim
+	Scenario: Consult a student's average
+	  Given the student "Gabrielle Amorim" with login "ga" is registered in the system
+	  And the student "Gabrielle Amorim" with login "ga" has an average "8.0"
+	  When I search for "ga"
+	  Then the system returns "ga" average "8.0"
+
 ##Controller Scenario
 #  Scenario: Search a student that is registered in the system
 #    Given the student "Jose Maria" with login "jm" is in the system

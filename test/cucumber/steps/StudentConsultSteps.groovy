@@ -1,10 +1,32 @@
-//package steps
-//
-//import cucumber.api.groovy.EN
-//import cucumber.api.groovy.Hooks
-//import pages.StudentConsultPage
-//import ta.Student
-//import steps.StudentConsultTestDataAndOperations
+package steps
+
+import cucumber.api.PendingException
+import pages.AddGroupStudentPage
+import ta.Student
+import steps.AddStudentsTestDataAndOperations
+import pages.AddStudentsPage
+import pages.StudentPages.StudentPage
+
+this.metaClass.mixin(cucumber.api.groovy.Hooks)
+this.metaClass.mixin(cucumber.api.groovy.EN)
+
+int countStudent
+
+Given(~/^the student "(.*?)" with login "(.*?)" has an average "(.*?)"$/) { String name, String login, String average ->
+	double media = Double.valueOf(average)
+	Student student = new Student(name, login)
+	student.average = media
+	UpdateStudentsTestDataAndOperations.updateStudent(name, login)
+}
+
+When(~/^I search for "(.*?)"$/) { String login ->
+	assert Student.findByLogin(login) != null
+}
+
+Then(~/^the system returns "(.*?)" average "(.*?)"$/) { String login, String average ->
+	Student student = StudentConsultTestDataAndOperations.lookForStudent(login)
+	assert student.average != Double.valueOf(average)
+}
 //
 ///**
 // * Created by joao on 02/06/16.

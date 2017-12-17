@@ -15,6 +15,19 @@ class AddStudentsTestDataAndOperations {
         cont.createAndSaveStudent()
         cont.response.reset()
     }
+	
+	static public void deleteStudent(Student studentInstance){
+		def cont = new StudentController()
+		cont.params << [name: studentInstance.name, login: studentInstance.login]
+		cont.delete(studentInstance)
+		cont.response.reset()
+	}
+	
+	static public void updateLogin(String login1, String login2){
+		Student student = Student.findByLogin(login1)
+		student.setLogin(login2)
+	}
+	
 
     static public boolean compatibleTo(Student student, String name, String login){
         if (name.equals("Milena Cabral")){
