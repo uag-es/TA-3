@@ -16,6 +16,12 @@ this.metaClass.mixin(cucumber.api.groovy.EN)
 
 int countStudent
 
+
+Then(~/^I see the name of "(.*?)" and the login "(.*?)" in "(.*?)" page$/) { String name, String login, String verStudent ->
+	to StudentPage
+	assert page.confirmStudent(name, login)
+}
+
 Given(~'^the student "([^"]*)" with login "([^"]*)" is not registered in the system$') { String name, String login ->
     assert Student.findByLogin(login) == null
 }
@@ -41,10 +47,10 @@ Then(~'^I can see the name of "([^"]*)" and the login "([^"]*)" in the list of s
     to StudentPage
     assert page.confirmStudent(name, login)
 }
-
+ 
 Given(~'^the student "([^"]*)" with login "([^"]*)" is registered in the system$') { String name, String login ->
     AddStudentsTestDataAndOperations.createStudent(name, login)
-    countStudent = AddStudentsTestDataAndOperations.countStudent()
+    //countStudent = AddStudentsTestDataAndOperations.countStudent()
     assert Student.findByLogin(login) != null
 }
 
