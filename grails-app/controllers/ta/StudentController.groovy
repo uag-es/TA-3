@@ -229,6 +229,7 @@ class StudentController {
 	}
 
 	def consult() {
+		
 		def auxList = Student.list()
 		def studentList = auxList.findAll {
 			it.name.toLowerCase().contains(params.consult.toLowerCase()) || it.login.toLowerCase().contains(params.consult.toLowerCase())
@@ -242,6 +243,8 @@ class StudentController {
 		} else {
 			render view: "search", model: [studentInstanceList: studentList, studentInstanceCount: studentList.size()]
 		}
+		
+		
 	}
 
 	@Transactional
