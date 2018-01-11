@@ -3,7 +3,6 @@ package ta
 import org.apache.ivy.core.settings.Validatable
 
 import java.text.SimpleDateFormat
-import java.lang.*
 import ta.Evaluation
 import ta.EvaluationsByCriterion
 
@@ -101,7 +100,16 @@ class StudentController {
 			}
 		}
 	}
-
+	
+	public ArrayList studentsAverageOverSeven(){
+		ArrayList<Student> list;
+		for(int i = 0; i < Student.list.size(); i++){
+			if(Student.list.get(i).getAverage() >= 7){
+				list.add(Student.list.get(i))
+			}
+		}
+	}
+	
 	public boolean evaluationTests(String studentLogin, String evaluationOrigin){
 		def evaluation = Evaluation.findByOrigin(evaluationOrigin)
 		List<Evaluation> listEval = new LinkedList<Evaluation>()
@@ -227,7 +235,11 @@ class StudentController {
 	def search() {
 		render view: "search"
 	}
-
+	
+	def studentsOverSeven(){
+		render view: "studentsOverSeven"
+	}
+	
 	def consult() {
 		def auxList = Student.list()
 		def studentList = auxList.findAll {
