@@ -22,8 +22,8 @@ class StudentConsultTestDataAndOperations {
     }
 
     public static boolean compatibleSearch2(String loginA){
-        def studentInstace = Student.findByLogin(loginA)
-        return studentInstace.login.equalsIgnoreCase(loginA)
+		Student student = Student.findByLogin(loginA)
+        return student
     }
 
     public static void createAndSaveStudent(String name, String login){
