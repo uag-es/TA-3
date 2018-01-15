@@ -27,6 +27,7 @@
 		<tr>
 
 			<g:sortableColumn property="description" title="${message(code: 'criterion.description.label', default: 'Description')}" />
+			<g:sortableColumn property="hab" title="${message(code: 'criterion.hab.label', default: 'Habilidade Avaliada')}" />
 
 		</tr>
 		</thead>
@@ -35,6 +36,7 @@
 			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
 				<td><g:link action="show" name="${criterionInstance.description}" id="${criterionInstance.id}">${fieldValue(bean: criterionInstance, field: "description")}</g:link></td>
+				<td><g:link action="show" name="${criterionInstance.hab}" id="${criterionInstance.id}">${fieldValue(bean: criterionInstance, field: "hab")}</g:link></td>
 
 			</tr>
 		</g:each>

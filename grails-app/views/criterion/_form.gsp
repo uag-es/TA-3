@@ -10,3 +10,13 @@
 	<g:textField name="description" required="" value="${criterionInstance?.description}"/>
 
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: criterionInstance, field: 'hab', 'error')} required">
+	<label for="hab">
+		<g:message code="criterion.hab.label" default="Habilidade Avaliada" />
+		<span class="required-indicator">*</span>
+		
+	</label>
+	<g:select name="hab" from="${criterionInstance.constraints.hab.inList}" required="" value="${criterionInstance?.hab}" valueMessagePrefix="criterion.hab"/>
+</div>
+

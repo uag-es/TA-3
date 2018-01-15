@@ -37,10 +37,7 @@ class CriterionController {
 		}
 	}
 	
-	public Criterion searchStudent2(String description){
-		def criterionInstance = Student.findByDescription(description)
-		return criterionInstance
-	}
+	
 
 	def show(Criterion criterionInstance) {
 		respond criterionInstance
