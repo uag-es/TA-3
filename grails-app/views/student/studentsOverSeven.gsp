@@ -12,10 +12,6 @@
 <div class="nav" role="navigation">
 	<ul>
 		<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-		<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-		<li><g:link class="createGroup" action="createGroup"><g:message code="Import Students" args="[entityName]" /></g:link></li>
-		<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
-		<li><g:link class="studentsOverSeven" action="studentsOverSeven" ><g:message args="[entityName]" />Students Over Seven</g:link></li>
 	</ul>
 </div>
 <div id="list-student" class="content scaffold-list" role="main">
@@ -28,9 +24,6 @@
 		<tr>
 
 			<g:sortableColumn property="name" title="${message(code: 'student.name.label', default: 'Name')}" />
-
-			<g:sortableColumn property="login" title="${message(code: 'student.login.label', default: 'Login')}" />
-
 			<g:sortableColumn property="average" title="${message(code: 'student.average.label', default: 'Media')}" />
 
 		</tr>

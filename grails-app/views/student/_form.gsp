@@ -20,3 +20,13 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: disciplineInstance, field: 'disciplines', 'error')} ">
+	<label for="disciplines">
+		<g:message code="students.discipline.label" default="Disciplines" />
+		
+	</label>
+	<g:select name="disciplines" from="${ta.Discipline.list()}" multiple="multiple" optionKey="id" size="5" value="${disciplineInstance?.disciplines*.id}" class="many-to-many"/>
+
+</div>
+
+

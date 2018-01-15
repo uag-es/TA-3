@@ -5,8 +5,9 @@ class Student {
 	String login;
 	double average;
 	List criteriaAndEvaluations
-	static hasMany = [criteriaAndEvaluations:EvaluationsByCriterion]
-
+	static hasMany = [criteriaAndEvaluations:EvaluationsByCriterion, disciplines: Discipline]
+	static belongsTo = Discipline
+	
 	static constraints = {
 		name blank : false
 		login unique : true, blank:false;
@@ -65,6 +66,12 @@ class Student {
 			this.addToCriteriaAndEvaluations(newEvByCrit)
 		}
 		this.calcMedia()
+	}
+	
+	public void addDiscipline(Discipline discipline){
+		if(!this.disciplines.contains(discipline)){
+			this.disciplines.add(discipline)
+		}
 	}
 
 
