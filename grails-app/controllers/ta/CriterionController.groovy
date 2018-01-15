@@ -17,6 +17,27 @@ class CriterionController {
 		Criterion criterion = new Criterion(params)
 		criterion.save flush : true
 	}
+	
+	def search() {
+		render view: "search"
+	}
+	
+	def consult() {
+		def auxList = Criterion.list()
+		def criterionList = auxList.findAll {
+			it.description.toLowerCase().contains(params.consult.toLowerCase())	}
+		if (criterionList == null) {
+			flash.message = message(code: 'default.not.found.message', args: [
+				message(code: 'criterion.label', default: 'Criterion'),
+				params.id
+			])
+			render view: "search", model: [criterionInstanceList: [], criterionInstanceCount: 0]
+		} else {
+			render view: "search", model: [criterionInstanceList: criterionList, criterionInstanceCount: criterionList.size()]
+		}
+	}
+	
+	
 
 	def show(Criterion criterionInstance) {
 		respond criterionInstance

@@ -14,6 +14,7 @@
 		<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 		<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 		<li><g:link class="createGroup" action="createGroup"><g:message code="Import Criterion" args="[entityName]" /></g:link></li>
+		<li><g:link class="search" action="search"><g:message code="default.search.label" args="[entityName]" /></g:link></li>
 	</ul>
 </div>
 <div id="list-criterion" class="content scaffold-list" role="main">
@@ -26,6 +27,7 @@
 		<tr>
 
 			<g:sortableColumn property="description" title="${message(code: 'criterion.description.label', default: 'Description')}" />
+			<g:sortableColumn property="hab" title="${message(code: 'criterion.hab.label', default: 'Habilidade Avaliada')}" />
 
 		</tr>
 		</thead>
@@ -34,6 +36,7 @@
 			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
 				<td><g:link action="show" name="${criterionInstance.description}" id="${criterionInstance.id}">${fieldValue(bean: criterionInstance, field: "description")}</g:link></td>
+				<td><g:link action="show" name="${criterionInstance.hab}" id="${criterionInstance.id}">${fieldValue(bean: criterionInstance, field: "hab")}</g:link></td>
 
 			</tr>
 		</g:each>

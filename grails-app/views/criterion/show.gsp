@@ -27,8 +27,9 @@
 		<g:if test="${criterionInstance?.description}">
 			<li class="fieldcontain">
 				<span id="description-label" class="property-label"><g:message code="criterion.description.label" default="Description" /></span>
-
+				<span id="hab-label" class="property-label"><g:message code="criterion.hab.label" default="Habilidade Avaliada" /></span>
 				<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${criterionInstance}" field="description"/></span>
+				<span class="property-value" aria-labelledby="hab-label"><g:fieldValue bean="${criterionInstance}" field="hab"/></span>
 
 			</li>
 		</g:if>
@@ -69,7 +70,11 @@
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="criterion.description.label" default="Description" /></span>
 					
+					
 						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${criterionInstance}" field="description"/></span>
+					
+					<span id="hab-label" class="property-label"><g:message code="criterion.hab.label" default="Habilidade Avaliada" /></span>
+						<span class="property-value" aria-labelledby="hab-label"><g:fieldValue bean="${criterionInstance}" field="hab"/></span>
 					
 				</li>
 				</g:if>
