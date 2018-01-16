@@ -1,12 +1,8 @@
 package ta
 
-import org.apache.ivy.core.settings.Validatable
-
-import java.text.SimpleDateFormat
-import ta.Evaluation
-import ta.EvaluationsByCriterion
-
 import static org.springframework.http.HttpStatus.*
+import java.text.SimpleDateFormat
+import ta.EvaluationsByCriterion
 import grails.transaction.Transactional
 
 @SuppressWarnings("GroovyMissingReturnStatement")
