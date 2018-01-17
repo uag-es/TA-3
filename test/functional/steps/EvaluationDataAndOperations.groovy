@@ -85,32 +85,28 @@ class EvaluationDataAndOperations{
             if(students.get(i).criteriaAndEvaluations == null){
                 if(valuesPerStudentBeforeInsertion.get(i)== 0){
                     if(parameter.equalsIgnoreCase("same")){
-                        returningValue = true
+                        return true
                     }else{
-                        returningValue = false
-                        break
+                        return false
                     }
                 }else{
                     def size = students.get(i).criteriaAndEvaluations.size();
                     if(size == valuesPerStudentBeforeInsertion.get(i)){
                         if(parameter.equalsIgnoreCase("same")){
-                            returningValue = true
+                            return true
                         }else{
-                            returningValue = false
-                            break
+                            return false
                         }
                     }else{
                         if(parameter.equalsIgnoreCase("same")){
-                            returningValue = false
-                            break
+                            return false
                         }else{
-                            returningValue = true
+                            return true
                         }
                     }
                 }
             }
         }
-        return returningValue
     }
 
     public static boolean existEvaluation(String criterionName, String dateInString){
@@ -135,7 +131,7 @@ class EvaluationDataAndOperations{
         return false
     }
 
-    public static boolean existEvaluation(String criterionName, String origin, String dateInString){
+    public static boolean existEvaluation(String origin, String dateInString){
         def applicationDate = formattedDate(dateInString)
         for(Evaluation evaluation : Evaluation.findAll()){
             if(evaluation.origin == origin && evaluation.applicationDate == applicationDate)
