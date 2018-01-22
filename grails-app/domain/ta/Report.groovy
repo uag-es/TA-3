@@ -30,8 +30,7 @@ class Report {
 	}
 
 	static constraints = {
-		name unique : true
-		name nullable : false
+		name unique : true, nullable : false
 		tipo inList: ["Porcentagem", "Media"], nullable: false
 		avaliacao inList: ["MA", "MPA", "MANA"]
 	}
@@ -39,5 +38,8 @@ class Report {
 	static mapping ={
 		sort "name"
 		sort name:"asc"
+	}
+	public String toString() {
+		return "Nome: " + name + " | Tipo: " + tipo + " | Valor: " + valor + " |Avaliação: " + avaliacao
 	}
 }

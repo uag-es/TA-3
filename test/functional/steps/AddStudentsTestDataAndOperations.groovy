@@ -30,18 +30,9 @@ class AddStudentsTestDataAndOperations {
 	
 
     static public boolean compatibleTo(Student student, String name, String login){
-        if (name.equals("Milena Cabral")){
-            boolean b = true
-        }
-        boolean compatible = false
-        if(student.getName().equals(name) && student.getLogin().equals(login)) compatible = true;
-        String no = student.getName()
-        String lo = student.getLogin()
-        boolean n = student.getName().equals(name)
-        boolean l = student.getLogin().equals(login)
-        n = no.equals(name)
-        l = lo.equals(login)
-        return compatible
+        
+        if(student.getName().equals(name) && student.getLogin().equals(login)) return true;
+        else return false
     }
 
     static public int countStudent(){

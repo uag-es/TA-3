@@ -1,10 +1,10 @@
 package ta
 
-import java.text.SimpleDateFormat
 
 import static org.springframework.http.HttpStatus.*
+import java.text.SimpleDateFormat
+
 import grails.transaction.Transactional
-import ta.Evaluation
 
 @Transactional(readOnly = true)
 class EvaluationController {
