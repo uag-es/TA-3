@@ -131,14 +131,14 @@ class EvaluationDataAndOperations{
         return false
     }
 
-    public static boolean existEvaluation(String origin, String dateInString){
-        def applicationDate = formattedDate(dateInString)
-        for(Evaluation evaluation : Evaluation.findAll()){
-            if(evaluation.origin == origin && evaluation.applicationDate == applicationDate)
-                return true;
-        }
-        return false;
-    }
+    //public static boolean existEvaluation(String origin, String dateInString){
+    //    def applicationDate = formattedDate(dateInString)
+    //    for(Evaluation evaluation : Evaluation.findAll()){
+    //        if(evaluation.origin == origin && evaluation.applicationDate == applicationDate)
+    //            return true;
+    //    }
+    //    return false;
+    //}
 
     public static boolean createEvaluation(String value, String criterionName, String origin, String dateInString){
         if(value == null || origin == "") return false;
