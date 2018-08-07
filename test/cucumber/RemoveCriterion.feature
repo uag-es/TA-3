@@ -6,6 +6,7 @@ Feature: Remove Criterion
   So that Criterion is not affecting student average anymore
 
 #GUI Scenario
+@ignore
   Scenario: Remove a criterion with students and evaluations using it
     Given a student with name "Zeca" and login "zc" is already on the system
     And this student has an evaluation in criterion "TEORICA"
@@ -13,6 +14,7 @@ Feature: Remove Criterion
     Then I should not see the criterion "TEORICA" listed in the student with login "zc"
 
 #Controller Scenario
+@ignore
   Scenario: Remove a criterion from the system
     Given the system has a student with name "Jose" and login "jj"
     And that student has a "MA" evaluation in criterion "GDI" with origin "Test" and applicationDate "21/12/1992"

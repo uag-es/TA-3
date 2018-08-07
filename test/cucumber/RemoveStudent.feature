@@ -4,6 +4,7 @@ Feature: Remove Student
   So I can delete all the informations about him
 
 #GUI Scenario - Gabrielle Amorim
+@ignore
 	Scenario: Delete an existing student 
 	  Given I am in the "Student Listagem" page
 	  And I can see the name of "Gabrielle Amorim" with login "ga" in the list of students

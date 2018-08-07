@@ -19,6 +19,7 @@ Feature: Notification
 #    And I should see a new notification related to the new report type
 #
 #Controller
+@ignore
   Scenario: Update a report
     Given that report with name "70% of evaluations are MANA", evaluation "MANA", type "Porcentagem", value "0.7" is in the system
    When I add the evaluation "MANA" in the criterion "blah blah" with origin "Mini-Test" and date "26/04/2016" to the student with name "Saulo Henrique Dias" and the login "shd2"

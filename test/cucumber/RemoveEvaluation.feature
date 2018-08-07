@@ -6,6 +6,7 @@ Feature: Remove Evaluation
   So I can correct the Student overall evaluation
 
 #GUI Scenario
+@ignore
 Scenario: Remove evaluations in different criterion from a student
   Given the system already has a student with name "Student 1" and login "s1"
   And this student has "MA" evaluation in criterion "SI"
@@ -14,6 +15,7 @@ Scenario: Remove evaluations in different criterion from a student
   Then I should not see it listed in the student
 
 #Controller Scenario
+@ignore
 Scenario: Remove an Evaluation from a Student
   Given the system has a student registered with name "Fulano Detal" and login "fd"
   And this student has a "MA" evaluation in criterion "ESS" with origin "Test" and applicationDate "21/12/1992"

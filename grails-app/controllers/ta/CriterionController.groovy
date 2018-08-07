@@ -93,7 +93,7 @@ class CriterionController {
 		String group = params.description
 		String[] criteria = group.split(";")
 		for (int i = 0; i < criteria.size(); i++) {
-			Criterion novo = new Criterion(criteria[i])
+			Criterion novo = new Criterion(description: criteria[i], hab: "Criatividade")
 
 			if (Criterion.findByDescription(novo.getDescription()) == null) {
 				novo.save flush: true

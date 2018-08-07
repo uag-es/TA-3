@@ -32,7 +32,10 @@ class StudentController {
 				}
 			}
 		}
-		return contE / tamanho
+		if (tamanho != 0) {
+			return contE / tamanho
+		}
+		return 0
 	}
 
 	def updateAllAverages() {

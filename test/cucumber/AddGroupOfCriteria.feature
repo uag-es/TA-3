@@ -13,6 +13,7 @@ Feature: Add Group Criterion
     And the criterion "C2" is also properly added to the system
 
 #GUI Scenario
+@ignore
   Scenario: Register a non-existent group of criteria
     Given I can not see the criterion "C3"
     And I can not see the criterion "C4"
@@ -23,6 +24,7 @@ Feature: Add Group Criterion
     And I should see the "C4" criterion available on the criteria list
 
 #Controller Scenario
+@ignore
   Scenario: Register a group of criteria that some of them already exists
     Given the criterion with name "C5" isnt on the system
     And the criterion with name "C9" is on the system
@@ -31,6 +33,7 @@ Feature: Add Group Criterion
     And the criterion "C9" is not added to the system
 
 #GUI Scenario
+@ignore
   Scenario: Register a group of criteria that some elements of it already exists
     Given I can not see the criterion "C6"
     And I can see the criterion "C7"

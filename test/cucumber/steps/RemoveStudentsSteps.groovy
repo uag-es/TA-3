@@ -17,7 +17,7 @@ int countStudent
 
 Given(~/^I can see the name of "(.*?)" with login "(.*?)" in the list of students$/) { String name, String login ->
 	to StudentPage
-	assert page.confirmStudent(name, login) == false
+	assert page.confirmStudent(name, login) == true
 }
 
 When(~/^I remove "(.*?)" with login "(.*?)"$/) { String name, String login ->
