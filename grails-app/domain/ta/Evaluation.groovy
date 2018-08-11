@@ -11,9 +11,16 @@ class Evaluation {
 			"Mini-Test",
 			"Form",
 			"Final"
-		], blank: false
-		value inList :["MA", "MPA", "MANA", "--"], blank :false
+		], blank: false, maxSize: 300
+		value inList :["MA", "MPA", "MANA", "--"], blank :false, maxSize: 50
 		criterion nullable : false
+	}
+
+	@Override
+	public String toString() {
+		return "Evaluation [origin=" + origin + ", value=" + value
+				+ ", applicationDate=" + applicationDate + ", criterion="
+				+ criterion + "]";
 	}
 
 	public Evaluation(String origin, String value, Date applicationDate, String criterion){
