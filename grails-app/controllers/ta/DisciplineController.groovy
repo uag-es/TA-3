@@ -15,6 +15,21 @@ class DisciplineController {
         respond Discipline.list(params), model:[disciplineInstanceCount: Discipline.count()]
     }
 
+	def GroupByProfessor(){
+		def listaGeral = Discipline.list(params)
+		def listaAgrupada = [:]
+		listaGeral.each{
+			if(listaAgrupada.containsKey(it.professor)){
+				listaAgrupada[it.professor]['disciplina'] += it.discipline
+				listaAgrupada[it.professor]['disciplineCount'] += 1		
+			}
+			else{
+			listaAgrupada[it.professor] = ['professor':it.professor, 'disciplineCount':1]
+			}
+		}
+		[disciplineInstanceList: listaAgrupada.values(), disciplineInstanceTotal: listaAgrupada.size()]
+	}
+
     def show(Discipline disciplineInstance) {
         respond disciplineInstance
     }
