@@ -13,7 +13,6 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="list" action="groupByProfessor"><g:message code="Agrupar por professor" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-discipline" class="content scaffold-list" role="main">
@@ -25,23 +24,19 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="discipline" title="${message(code: 'discipline.discipline.label', default: 'Discipline')}" />
-					
-						<g:sortableColumn property="classTime" title="${message(code: 'discipline.classTime.label', default: 'Class Time')}" />
 					
 						<g:sortableColumn property="professor" title="${message(code: 'discipline.professor.label', default: 'Professor')}" />
-					
+						<g:sortableColumn property="professor" title="${message(code: 'discipline.professor.label', default: 'QuantidadeDisciplina')}" />
+						
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${disciplineInstanceList}" status="i" var="disciplineInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${disciplineInstance.id}">${fieldValue(bean: disciplineInstance, field: "discipline")}</g:link></td>
+						<td>${disciplineInstance['professor']}</td>
+						<td>${disciplineInstance['disciplineCount']}</td>
 					
-						<td><g:formatDate date="${disciplineInstance.classTime}" /></td>
-					
-						<td>${fieldValue(bean: disciplineInstance, field: "professor")}</td>
 					
 					</tr>
 				</g:each>
