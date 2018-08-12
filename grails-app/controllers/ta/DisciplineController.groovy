@@ -15,7 +15,7 @@ class DisciplineController {
         respond Discipline.list(params), model:[disciplineInstanceCount: Discipline.count()]
     }
 
-	def GroupByProfessor(){
+	def groupByProfessor(){
 		def listaGeral = Discipline.list(params)
 		def listaAgrupada = [:]
 		listaGeral.each{
