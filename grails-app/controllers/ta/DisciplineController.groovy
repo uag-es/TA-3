@@ -59,14 +59,21 @@ class DisciplineController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'discipline.label', default: 'Discipline'), disciplineInstance.id])
-                redirect disciplineInstance
+                this.flashAndRedirect('default.created.message', disciplineInstance.id, disciplineInstance)
             }
             '*' { respond disciplineInstance, [status: CREATED] }
         }
     }
-
-    def edit(Discipline disciplineInstance) {
+	
+	def flashAndRedirect(String codigo, int id, Discipline disciplineInstance){
+		flash.message = message(code: codigo, args:[message(code: 'discipline.label', default: 'Discipline'),id])
+		redirect disciplineInstance
+		
+	} 
+    
+	
+	
+	def edit(Discipline disciplineInstance) {
         respond disciplineInstance
     }
 
@@ -86,8 +93,7 @@ class DisciplineController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Discipline.label', default: 'Discipline'), disciplineInstance.id])
-                redirect disciplineInstance
+                this.flashAndRedirect('default.updated.message', disciplineInstance.id, disciplineInstance)
             }
             '*'{ respond disciplineInstance, [status: OK] }
         }
