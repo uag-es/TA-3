@@ -10,9 +10,9 @@ class DisciplineShowPage extends Page {
 	static at = {
 		title ==~ titulo
 	}
-	def existeNome(String disciplina){
+	def existName(String discipline){
 		def html = $('html').getAttribute("innerHTML")
-		assert html.contains(disciplina)
+		assert html.contains(discipline)
 			  
 	}
 

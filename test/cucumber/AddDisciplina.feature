@@ -10,7 +10,7 @@ Feature: Cadastrar disciplina
   	Then existe apenas uma disciplina armazenada no sistema com o nome "matematica" e professor "joao"
   
   	
-  Scenario:Cadastrar disciplina corretamente
+  Scenario:Cadastrar disciplina corretamente(gui)
   	Given eu estou na pagina de cadastrar disciplina
   	When preencho os campos com nome da disciplina "matematica",a data do inicio das aulas "10/08/2018" e o nome do professor "joao"
   	And pressiono o botao criar

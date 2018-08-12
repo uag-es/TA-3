@@ -18,7 +18,6 @@ class DisciplineCreatePage extends Page {
 		$("select", name:"applicationDate").click()
 		$("select", name:"applicationDate").value(dataInicioAula)
 		$("form").professor = professor
-	
 	}
 	
 	def submit(){

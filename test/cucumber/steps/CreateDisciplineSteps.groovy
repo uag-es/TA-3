@@ -35,5 +35,5 @@ When(~/^pressiono o botao criar$/) { ->
 
 Then(~/^eu vejo os detalhes da disciplina "(.*?)"$/) { String disciplina ->
 	at DisciplineShowPage
-	page.existeNome(disciplina)
+	page.existName(disciplina)
 }
