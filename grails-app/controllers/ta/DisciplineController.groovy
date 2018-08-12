@@ -22,8 +22,13 @@ class DisciplineController {
     def create() {
         respond new Discipline(params)
     }
-
-    @Transactional
+	
+	def saveDiscipline(){
+		def discipline = new Discipline(params)
+		save(discipline)		
+	}
+    
+	@Transactional
     def save(Discipline disciplineInstance) {
         if (disciplineInstance == null) {
             notFound()
