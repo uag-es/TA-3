@@ -59,20 +59,22 @@ class DisciplineController {
 
         request.withFormat {
             form multipartForm {
-                this.flashAndRedirect('default.created.message', disciplineInstance.id, disciplineInstance)
+                this.flashAndRedirect('default.created.message', disciplineInstance.id.toInteger(), disciplineInstance, null, null)
             }
             '*' { respond disciplineInstance, [status: CREATED] }
         }
     }
 	
-	def flashAndRedirect(String codigo, int id, Discipline disciplineInstance){
-		flash.message = message(code: codigo, args:[message(code: 'discipline.label', default: 'Discipline'),id])
-		redirect disciplineInstance
-		
+	def flashAndRedirect(String cod, int id, Discipline disciplineInstance, String action, String method){
+		flash.message = message(code: cod, args:[message(code: 'discipline.label', default: 'Discipline'),id])
+		if(disciplineInstance != null){
+			redirect disciplineInstance
+		}
+		else{
+			redirect action: action , method: method
+		}
 	} 
     
-	
-	
 	def edit(Discipline disciplineInstance) {
         respond disciplineInstance
     }
@@ -93,7 +95,7 @@ class DisciplineController {
 
         request.withFormat {
             form multipartForm {
-                this.flashAndRedirect('default.updated.message', disciplineInstance.id, disciplineInstance)
+                this.flashAndRedirect('default.updated.message', disciplineInstance.id.toInteger(), disciplineInstance, null, null)
             }
             '*'{ respond disciplineInstance, [status: OK] }
         }
@@ -111,8 +113,7 @@ class DisciplineController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Discipline.label', default: 'Discipline'), disciplineInstance.id])
-                redirect action:"index", method:"GET"
+                this.flashAndRedirect('default.deleted.message', disciplineInstance.id.toInteger(), null, "index","GET")
             }
             '*'{ render status: NO_CONTENT }
         }
@@ -121,8 +122,7 @@ class DisciplineController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'discipline.label', default: 'Discipline'), params.id])
-                redirect action: "index", method: "GET"
+				this.flashAndRedirect('default.not.found.message', params.id, null, "index","GET")
             }
             '*'{ render status: NOT_FOUND }
         }
